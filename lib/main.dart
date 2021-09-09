@@ -1,5 +1,8 @@
+// @dart=2.9
+
 import 'package:flutter/material.dart';
-import 'package:project_fashion_sales_app/home_page.dart';
+import 'package:project_fashion_sales_app/models/constants.dart';
+import 'package:project_fashion_sales_app/screens/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,11 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'App Moda Title',
+      title: 'AppFashionSales',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'App Moda'),
+      home: Home(title: 'Vendendo Moda', titleComplement: ' ♥', ),
     );
   }
 }
