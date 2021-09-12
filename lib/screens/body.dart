@@ -6,6 +6,11 @@ import 'package:project_fashion_sales_app/components/item_card.dart';
 import 'package:project_fashion_sales_app/models/product.dart';
 
 class Body extends StatelessWidget {
+
+  Body(this._hideBottomNavController);
+
+  ScrollController _hideBottomNavController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,6 +25,7 @@ class Body extends StatelessWidget {
                 child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
             child: GridView.builder(
+              controller: _hideBottomNavController,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.75,
